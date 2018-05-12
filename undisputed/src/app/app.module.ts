@@ -1,26 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { WODComponent } from './wod/wod.component';
-=======
 import { IMTComponent } from './imt/imt.component';
 import { NavComponent } from './nav/nav.component';
->>>>>>> 8f5241fa982e52f9121613fbcf213ba1955e1278
+import { RouterModule, Routes } from '@angular/router';
+
+
+const routes: Routes =  [
+  { path: 'movement', component: IMTComponent },
+  { path: 'wod',      component: WODComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    WODComponent
-=======
-    IMTComponent,
-    NavComponent
->>>>>>> 8f5241fa982e52f9121613fbcf213ba1955e1278
+    WODComponent,
+    NavComponent,
+    IMTComponent
   ],
+
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
