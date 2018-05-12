@@ -5,6 +5,7 @@ import { WODComponent } from './wod/wod.component';
 import { IMTComponent } from './imt/imt.component';
 import { NavComponent } from './nav/nav.component';
 import { RouterModule, Routes } from '@angular/router';
+import { WodAdminComponent } from './Shared/wod-admin/wod-admin.component';
 
 
 const route: Routes =  [
@@ -18,7 +19,8 @@ const route: Routes =  [
     AppComponent,
     WODComponent,
     NavComponent,
-    IMTComponent],
+    IMTComponent,
+    WodAdminComponent],
 
   imports: [
     BrowserModule,
