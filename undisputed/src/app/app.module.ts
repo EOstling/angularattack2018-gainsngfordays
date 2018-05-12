@@ -5,17 +5,16 @@ import { WODComponent } from './wod/wod.component';
 import { IMTComponent } from './imt/imt.component';
 import { NavComponent } from './nav/nav.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     WODComponent,
     NavComponent,
-    IMTComponent
+    IMTComponent],
 
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

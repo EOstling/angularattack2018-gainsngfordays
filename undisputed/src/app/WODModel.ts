@@ -6,5 +6,5 @@ export class WODModel {
   id: number;
 WOD: WOD;
 WODEntry: WODEntry[];
-//WODEntryItem: WODEntryItem[];
+// WODEntryItem: WODEntryItem[];
 }
