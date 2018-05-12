@@ -1,7 +1,11 @@
 .navbar{
-    background-color: #990000;
+    background-color: #190000;
 }
 
 .hr{
     margin:10px;
+}
+
+.nav-item {
+    float: right;
 }

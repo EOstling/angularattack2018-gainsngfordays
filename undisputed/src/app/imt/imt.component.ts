@@ -21,10 +21,8 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
     pB: 'Best';
 
     chart =  [];
-
-
-  canvas: any;
-  ctx: any;
+    canvas: any;
+    ctx: any;
 
   ngAfterViewInit() {
     this.canvas = document.getElementById('myChart');
