@@ -24,6 +24,7 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
     canvas: any;
     ctx: any;
 
+  //mount the data vis for the graph in lifecyle hook
   ngAfterViewInit() {
     this.canvas = document.getElementById('myChart');
     this.ctx = this.canvas.getContext('2d');
@@ -47,8 +48,7 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
       }
     });
   }
-
-
+  //inject service
   constructor(private ImtServiceService: ImtServiceService) {
     this.id = 1;
     this.weight = 230;
@@ -57,13 +57,18 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
     this.pB =  'Best';
    }
 
- 
-
   ngOnInit() {
     this.getIMT();
   }
 
   getIMT(): void {
+    
     this.IMTS = this.ImtServiceService.getImts();
+    console.log(this.IMTS);
+    //iterate throught the array
+   for(let i=0; i<this.IMTS.length;i++){
+    console.log('Each Array is: '+ i);
+  
+   }
   }
 }
