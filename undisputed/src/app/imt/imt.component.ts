@@ -13,7 +13,7 @@ export class IMTComponent implements OnInit, Imt {
     id: 1;
     weight: 230;
     time: Date;
-    Date: Date;
+    day: Date;
     workout: 'Navy Seal Workout';
     notes: 'Test';
     pB: 'Best';
@@ -24,7 +24,6 @@ export class IMTComponent implements OnInit, Imt {
     this.workout = 'Navy Seal Workout';
     this.notes = 'Test';
     this.pB =  'Best';
-
    }
 
   ngOnInit() {
