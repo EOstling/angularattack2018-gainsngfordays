@@ -7,7 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 
 
-const routes: Routes =  [
+const route: Routes =  [
   { path: 'movement', component: IMTComponent },
   { path: 'wod',      component: WODComponent },
 ];
@@ -22,7 +22,7 @@ const routes: Routes =  [
 
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(route)
   ],
   providers: [],
   bootstrap: [AppComponent]
