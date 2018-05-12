@@ -3,7 +3,7 @@
     <div class="col-xs-12">
         <div class="card">
             <img class="card-img-top" src="..." alt="Filler">
-            <h2>Custom Individual Movements</h2>
+            <h2>Your previous individual movements workout was </h2>
             <ul>
               <li>
                 Your weight is:  {{this.weight}} 
@@ -11,7 +11,7 @@
               <li>
                 Your time is:  {{this.time}} 
               </li>
-              <div *ngFor="let Imts of Imt">
+              <div>
                   {{this.day}}
                 </div>
               <li>
@@ -21,7 +21,9 @@
                 Your Personal Best is:  {{this.pB}} 
               </li>
             </ul>
+            <button class="test" (click)="getIMT();">Look at your past results</button>
         </div>
+        <app-imt-list-items></app-imt-list-items>
     </div>
   </div>
 </div>
