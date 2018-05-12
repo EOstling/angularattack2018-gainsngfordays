@@ -7,8 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WodAdminComponent } from './wod-admin/wod-admin.component';
 import { ImtListItemsComponent } from './imt/imt-list-items/imt-list-items.component';
-
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,6 +15,7 @@ import { FormsModule }   from '@angular/forms';
 const route: Routes =  [
   { path: 'movement', component: IMTComponent },
   { path: 'wod', component: WODComponent },
+  {path: 'item', component: ImtListItemsComponent}
 ];
 
 @NgModule({

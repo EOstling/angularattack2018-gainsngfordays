@@ -4,26 +4,10 @@
         <div class="card">
             <img class="card-img-top" src="..." alt="Filler">
             <h2>Your previous individual movements workout was </h2>
-            <ul>
-              <li>
-                Your weight is:  {{this.weight}} 
-              </li>
-              <li>
-                Your time is:  {{this.time}} 
-              </li>
-              <div>
-                  {{this.day}}
-                </div>
-              <li>
-                Your workout is is:  {{this.workout}} 
-              </li>
-              <li>
-                Your Personal Best is:  {{this.pB}} 
-              </li>
-            </ul>
-            <button class="btn btn-outline-primary"  routerLink="/app-imt-list-items" (click)="getIMT()">Look at your past results</button>
-            <button class="btn btn-outline-secondary" (click)="sendToChild()">Add your workouts</button>
-            <button class ="btn btn-outline-secondary" (giveWorkout)="getFromChild($event)">Tester</button>
+                <button class="btn btn-outline-primary">Look at your past results</button>
+                <button class="btn btn-outline-secondary" (click)="getIMT()">Add your workouts</button>
+                <app-imt-list-items></app-imt-list-items>
+                 The workout is: {{ IWorkOuts }}
         </div>
     </div>
   </div>

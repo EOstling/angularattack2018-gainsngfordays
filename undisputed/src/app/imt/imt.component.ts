@@ -9,7 +9,7 @@ import {Chart} from 'chart.js';
   templateUrl: './imt.component.html',
   styleUrls: ['./imt.component.css']
 })
-export class IMTComponent implements OnInit,AfterViewInit ,Imt {
+export class IMTComponent implements OnInit, AfterViewInit , Imt {
 
   IMTS: Imt[];
     id: 1;
@@ -25,19 +25,19 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
     canvas: any;
     ctx: any;
 
-    @Input() IWorkOuts: string; //proof of concept first for passing data from Child to parent
+    @Input() IWorkOuts: string; // proof of concept first for passing data from Child to parent
 
-  //mount the data vis for the graph in lifecyle hook
+  // mount the data vis for the graph in lifecyle hook
   ngAfterViewInit() {
     this.canvas = document.getElementById('myChart');
     this.ctx = this.canvas.getContext('2d');
-    let myChart = new Chart(this.ctx, {
+    const myChart = new Chart(this.ctx, {
       type: 'pie',
       data: {
-          labels: ["New", "In Progress", "On Hold"],
+          labels: [ 'New' , 'In Progress', 'On Hold'],
           datasets: [{
               label: '# of Votes',
-              data: [1,2,3],
+              data: [1, 2 , 3 ],
               backgroundColor: [
                   'rgba(255, 99, 132, 1)',
                   'rgba(54, 162, 235, 1)',
@@ -51,7 +51,8 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
       }
     });
   }
-  //inject service
+  // inject service
+  // tslint:disable-next-line:no-shadowed-variable
   constructor(private ImtServiceService: ImtServiceService) {
     this.id = 1;
     this.weight = 230;
@@ -67,14 +68,15 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
   getIMT(): void {
     this.IMTS = this.ImtServiceService.getImts();
     console.log(this.IMTS);
-    //iterate throught the array
-   for(let i=0; i < this.IMTS.length;i++){
+    // iterate throught the array
+   for (let i = 0; i < this.IMTS.length; i++) {
     console.log('Each Array is at:' + i + this.IMTS);
+    JSON.stringify(this.IMTS);
    }
   }
-  //PARENT COMPONENT
-  //event listener catching info
-  getFromChild($event){
+  // PARENT COMPONENT
+  // event listener catching info
+  getFromChild($event) {
     this.IWorkOuts = $event;
   }
 }
