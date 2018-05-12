@@ -4,6 +4,14 @@ import { AppComponent } from './app.component';
 import { WODComponent } from './wod/wod.component';
 import { IMTComponent } from './imt/imt.component';
 import { NavComponent } from './nav/nav.component';
+import { RouterModule, Routes } from '@angular/router';
+
+
+const route: Routes =  [
+  { path: 'movement', component: IMTComponent },
+  { path: 'wod',      component: WODComponent },
+];
+
 
 @NgModule({
   declarations: [
@@ -14,7 +22,7 @@ import { NavComponent } from './nav/nav.component';
 
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(route)
   ],
   providers: [],
   bootstrap: [AppComponent]
