@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output, EventEmitter, Input } from '@angular/core';
 import { Imt } from '../imt';
 import { ImtServiceService } from '../Shared/imt-service.service';
 import { MockImt } from '../MockImt';
@@ -24,7 +24,7 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
     canvas: any;
     ctx: any;
 
-    IWorkOuts: string; //proof of concept first for passing data from Child to parent
+    @Input() IWorkOuts: string; //proof of concept first for passing data from Child to parent
 
   //mount the data vis for the graph in lifecyle hook
   ngAfterViewInit() {
@@ -67,9 +67,8 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
     this.IMTS = this.ImtServiceService.getImts();
     console.log(this.IMTS);
     //iterate throught the array
-   for(let i=0; i<this.IMTS.length;i++){
-    console.log('Each Array is: '+ i);
-  
+   for(let i=0; i < this.IMTS.length;i++){
+    console.log('Each Array is at:' + i + this.IMTS);
    }
   }
   //PARENT COMPONENT

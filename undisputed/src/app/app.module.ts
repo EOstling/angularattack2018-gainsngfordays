@@ -7,13 +7,12 @@ import { NavComponent } from './nav/nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WodAdminComponent } from './Shared/wod-admin/wod-admin.component';
 import { ImtListItemsComponent } from './imt/imt-list-items/imt-list-items.component';
-
+import { FormsModule }   from '@angular/forms';
 
 const route: Routes =  [
   { path: 'movement', component: IMTComponent },
   { path: 'wod', component: WODComponent },
 ];
-
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ const route: Routes =  [
 
   imports: [
     BrowserModule,
-    RouterModule.forRoot(route)
+    RouterModule.forRoot(route),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

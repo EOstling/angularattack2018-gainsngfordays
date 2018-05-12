@@ -21,12 +21,10 @@
                 Your Personal Best is:  {{this.pB}} 
               </li>
             </ul>
-            <button class="btn btn-outline-primary"  routerLink="/app-imt-list-items" (click)="getIMT();">Look at your past results</button>
-            <button class="btn btn-outline-secondary" (click)="sendToChild();">Add your workouts</button>
-            <button class ="btn btn-outline-secondary" (giveWorkout)="getFromChild($event);">Tester</button>
-            Workout is: {{IWorkOuts}}
+            <button class="btn btn-outline-primary"  routerLink="/app-imt-list-items" (click)="getIMT()">Look at your past results</button>
+            <button class="btn btn-outline-secondary" (click)="sendToChild()">Add your workouts</button>
+            <button class ="btn btn-outline-secondary" (giveWorkout)="getFromChild($event)">Tester</button>
         </div>
-        <app-imt-list-items></app-imt-list-items>
     </div>
   </div>
 </div>
