@@ -13,6 +13,7 @@ export class IMTComponent implements OnInit,AfterViewInit ,Imt {
 
   IMTS: Imt[];
     id: 1;
+    name: 'Tester';
     weight: 230;
     time: Date;
     day: Date;
