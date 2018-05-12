@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Imt } from '../imt';
+import { ImtServiceService } from '../Shared/imt-service.service';
+import { MockImt } from '../MockImt';
 
 @Component({
   selector: 'app-imt',
@@ -7,7 +9,7 @@ import { Imt } from '../imt';
   styleUrls: ['./imt.component.css']
 })
 export class IMTComponent implements OnInit, Imt {
-
+  IMTS: Imt[];
     id: 1;
     weight: 230;
     time: Date;
@@ -16,14 +18,20 @@ export class IMTComponent implements OnInit, Imt {
     notes: 'Test';
     pB: 'Best';
 
-  constructor() {
+  constructor(private ImtServiceService: ImtServiceService) {
     this.id = 1;
     this.weight = 230;
     this.workout = 'Navy Seal Workout';
     this.notes = 'Test';
     this.pB =  'Best';
+
    }
 
   ngOnInit() {
+    this.getIMT();
+  }
+
+  getIMT(): void {
+    this.IMTS = this.ImtServiceService.getImts();
   }
 }

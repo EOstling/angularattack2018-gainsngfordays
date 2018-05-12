@@ -9,7 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const route: Routes =  [
   { path: 'movement', component: IMTComponent },
-  { path: 'wod',      component: WODComponent },
+  { path: 'wod', component: WODComponent },
 ];
 
 
