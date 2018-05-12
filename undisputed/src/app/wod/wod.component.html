@@ -1,4 +1,23 @@
-<div *ngFor="let wods of WODS">
-  {{wods.WOD.type.name}} for {{wods.WOD.day}}
-  <div></div>
-</div>
+<div class="col-md-12" style="text-align: center;">
+  <div *ngFor="let wods of WODS" class="col-md-6">
+    <div class="text-uppercase font-weight-bold">
+      <u>
+        {{wods.WOD.type.name}} for {{wods.WOD.day | date:'MM/dd/yyyy'}}
+        <br />
+      </u>
+    </div>
+    <div *ngFor="let wodEntry of wods.WODEntry" >
+      <div class="font-weight-bold">
+        {{wodEntry.name}}
+        <br />
+      </div>
+      <div>
+        {{wodEntry.notes}}
+        <br /><br />
+      </div>
+      <div *ngFor="let item of wodEntry.items">
+        {{item.notes}}
+      </div>
+      <br /><br />
+    </div>
+  </div>
