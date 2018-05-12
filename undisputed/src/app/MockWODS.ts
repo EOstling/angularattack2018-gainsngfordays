@@ -1,6 +1,6 @@
 import { WODModel } from './WODModel';
 
-export const MockMods: WODModel[] = [{'id': 1,
+export const MockWods: WODModel[] = [{'id': 1,
   'WOD': {
   'id': 1,
   'day': new Date('05/01/2018'),
