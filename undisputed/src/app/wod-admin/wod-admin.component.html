@@ -5,7 +5,7 @@
     </div>
     <div class='col-sm-5'>
       <input id="day" name="day" placeholder="Date of Workout" class="form-control" [ngModel]="Wod.WOD.day | date:'dd-MM-yyyy'"
-        (ngModelChange)="Wod.WOD.day.queryDate=$event" (change)="loadWod()" />
+        (ngModelChange)="Wod.WOD.day=$event" (change)="loadWod()" />
     </div>
   </div>
   <div class="row">
