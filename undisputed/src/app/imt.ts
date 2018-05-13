@@ -1,4 +1,6 @@
 
+import {Workout} from './workout';
+
 export class Imt {
 
   id: number;
@@ -6,8 +8,8 @@ export class Imt {
   weight: number;
   time: Date;
   day: Date;
-  workout: string;
-  notes: string; 
+  typeOfWorkout: Workout[];
+  notes: string;
   pB: string;
 
 }

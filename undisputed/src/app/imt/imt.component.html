@@ -3,11 +3,17 @@
     <div class="col-xs-12">
         <div class="card">
             <img class="card-img-top" src="..." alt="Filler">
-            <h2>Your previous individual movements workout was </h2>
+            <h2>Movements </h2>
+            <ul>
+              <li *ngFor="let mocks of mock">
+               Workouts:  {{ mocks }}
+              </li>
+            </ul>
                 <button class="btn btn-outline-primary">Look at your past results</button>
                 <button class="btn btn-outline-secondary" (click)="getIMT()">Add your workouts</button>
-                <app-imt-list-items (giveWorkout)='getFromChild($event)'></app-imt-list-items>
-                 The workout is: {{ IWorkOuts }}
+                <pre>{{this.IMTS | json }}</pre>
+                <app-imt-list-items (giveWorkout)="getFromChild($event)"></app-imt-list-items>
+                 The workout is: {{ IWorkOuts | json }}
         </div>
     </div>
   </div>

@@ -17,13 +17,15 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
     weight: 230;
     time: Date;
     day: Date;
-    workout: 'Navy Seal Workout';
+    typeOfWorkout: [{'id': 1 , 'type': 'Strength' }];
     notes: 'Test';
     pB: 'Best';
 
     chart =  [];
     canvas: any;
     ctx: any;
+
+    mock =  MockImt;
 
     @Input() IWorkOuts: string; // proof of concept first for passing data from Child to parent
 
@@ -56,16 +58,17 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
   constructor(private ImtServiceService: ImtServiceService) {
     this.id = 1;
     this.weight = 230;
-    this.workout = 'Navy Seal Workout';
     this.notes = 'Test';
     this.pB =  'Best';
    }
 
   ngOnInit() {
+
     this.getIMT();
   }
 
   getIMT(): void {
+    const given = [];
     this.IMTS = this.ImtServiceService.getImts();
     console.log(this.IMTS);
     // iterate throught the array

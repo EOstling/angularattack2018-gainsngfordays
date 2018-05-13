@@ -1,7 +1,7 @@
 import { sample } from 'rxjs/internal/operators';
 import { Injectable, OnInit } from '@angular/core';
 import { MockImt } from '../MockImt';
-import { Imt } from '../imt'
+import { Imt } from '../imt';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +9,15 @@ import { Imt } from '../imt'
 export class ImtServiceService implements OnInit {
   IMTS: Imt[];
 
-  ngOnInit() 
-  {}
+  ngOnInit() {
 
-  constructor(){}
+  }
+
+  constructor() {
+
+  }
 
   getImts(): Imt[]  {
     return MockImt;
   }
-
-  
 }
