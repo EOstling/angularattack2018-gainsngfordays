@@ -18,11 +18,12 @@ export class ImtListItemsComponent implements OnInit {
   temp: string;
   @Input() imtWorkouts: string;
   @Output() giveWorkout = new EventEmitter<string>(); // for passing to the parent component
+
   ngOnInit() {
+
   }
 
-  // THIS IS THE CHILD COMPONENT
-  // event sending info
   NotifyParent(): void {
     this.giveWorkout.emit('Workouts');
   }
+}

@@ -21,7 +21,7 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
     notes: 'Test';
     pB: 'Best';
 
-    mock = Array<any>();
+    mockery = Array<any>();
     count: number; // counter for service
     chart =  [];
     canvas: any;
@@ -62,18 +62,19 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
    }
 
   ngOnInit() {
-    this.count = this.mock.length;
-    this.ImtServiceService.mocks.subscribe(res => this.mock = res);
-    this.getIMT();
+    this.count = this.mockery.length;
+    this.ImtServiceService.mocks.subscribe(res => this.mockery = res);
+   this.mockery = this.ImtServiceService.getImts(this.mockery);
   }
 
   getIMT(): void {
     const given = [];
-    this.IMTS = this.ImtServiceService.getImts(this.mock);
+    this.IMTS = this.ImtServiceService.getImts(this.mockery);
     // iterate throught the array
    for (let i = 0; i < this.IMTS.length; i++) {
     console.log('Each Array is at:' + i + this.IMTS);
     JSON.stringify(this.IMTS);
+
    }
   }
   // PARENT COMPONENT
