@@ -33,31 +33,33 @@
 <div class="container">
   <div *ngIf="WODS">
     <div *ngFor="let wods of WODS" class="row text-center">
-      <div class="col-sm-5">
-        <div class="text-uppercase font-weight-bold">
-          <u>
-            {{wods.WOD.type.name}} for {{wods.WOD.day | date:'MM/dd/yyyy'}}
-            <br />
-          </u>
-        </div>
-        <div *ngFor="let wodEntry of wods.WODEntry">
-          <div class="font-weight-bold">
-            {{wodEntry.name}}
-            <br />
+      <div class="row-to-center">
+          <div class="col-xs-10">
+              <div class="text-uppercase font-weight-bold">
+                <u>
+                  {{wods.WOD.type.name}} for {{wods.WOD.day | date:'MM/dd/yyyy'}}
+                  <br />
+                </u>
+              </div>
+              <div *ngFor="let wodEntry of wods.WODEntry">
+                <div class="font-weight-bold">
+                  {{wodEntry.name}}
+                  <br />
+                </div>
+                <div>
+                  {{wodEntry.notes}}
+                  <br />
+                  <br />
+                </div>
+                <div *ngFor="let item of wodEntry.items">
+                  {{item.notes}}
+                </div>
+                <br />
+                <br />
+              </div>
+            </div>
           </div>
-          <div>
-            {{wodEntry.notes}}
-            <br />
-            <br />
-          </div>
-          <div *ngFor="let item of wodEntry.items">
-            {{item.notes}}
-          </div>
-          <br />
-          <br />
         </div>
       </div>
-    </div>
-  </div>
 </div>
 

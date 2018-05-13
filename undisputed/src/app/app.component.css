@@ -1,3 +1,10 @@
 .body{
     background-color: grey;
 }
+
+.image{
+  height:1%; background-size:cover; width:auto;
+  background-image:url('../assets/yell.jpg');
+  background-position:50% 50%;
+
+}
