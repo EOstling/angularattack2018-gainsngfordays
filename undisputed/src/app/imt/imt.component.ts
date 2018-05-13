@@ -76,7 +76,8 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
   }
   // PARENT COMPONENT
   // event listener catching info
-  getFromChild($event) {
-    this.IWorkOuts = $event;
+  // https://dzone.com/articles/understanding-output-and-eventemitter-in-angular
+  getFromChild(value) {
+    this.IWorkOuts = value;
   }
 }
