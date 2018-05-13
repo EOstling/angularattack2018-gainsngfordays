@@ -7,7 +7,7 @@ export class Profile
     email: string;
     age: number;
     username: string;
-    private password: string;
+    password: string;
 
     constructor(fname: string, lname: string, email: string, age: number, username: string, password: string)
     {
