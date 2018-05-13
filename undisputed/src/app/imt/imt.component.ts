@@ -68,6 +68,7 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
   }
 
   getIMT(): void {
+    const given = [];
     this.IMTS = this.ImtServiceService.getImts();
     console.log(this.IMTS);
     // iterate throught the array

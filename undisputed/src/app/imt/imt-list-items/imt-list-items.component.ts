@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import {Workout} from '../../workout';
 import {Imt} from '../../imt';
 
+
 @Component({
   selector: 'app-imt-list-items',
   templateUrl: './imt-list-items.component.html',
@@ -10,8 +11,7 @@ import {Imt} from '../../imt';
 })
 export class ImtListItemsComponent implements OnInit {
 
-  constructor( ) {
-
+  constructor() {
   }
 
   temp: 'Bench';
@@ -19,12 +19,12 @@ export class ImtListItemsComponent implements OnInit {
   @Output() giveWorkout = new EventEmitter<string>(); // for passing to the parent component
 
   ngOnInit() {
-
   }
 
   // THIS IS THE CHILD COMPONENT
   // event sending info
   NotifyParent(): void {
-    this.giveWorkout.emit('Bench');
+
+    this.giveWorkout.emit('Workouts');
   }
 }
