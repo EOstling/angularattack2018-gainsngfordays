@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import {Workout} from '../../workout';
@@ -11,20 +12,24 @@ import {Imt} from '../../imt';
 })
 export class ImtListItemsComponent implements OnInit {
 
+  newWorkOut: string;
+  nNotes: string;
+  name: string;
+
   constructor() {
   }
 
-  temp: 'Bench';
+  temp: string;
   @Input() imtWorkouts: string;
   @Output() giveWorkout = new EventEmitter<string>(); // for passing to the parent component
 
   ngOnInit() {
+
   }
 
-  // THIS IS THE CHILD COMPONENT
-  // event sending info
   NotifyParent(): void {
-
-    this.giveWorkout.emit('Workouts');
+    this.giveWorkout.emit( this.newWorkOut);
+    this.giveWorkout.emit(this.nNotes);
+    this.giveWorkout.emit(this.name);
   }
 }

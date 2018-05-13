@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FooterComponent } from './footer/footer.component';
+import { ImtServiceService } from './Shared/imt-service.service';
 
 const route: Routes =  [
   { path: 'movement', component: IMTComponent },
@@ -38,7 +39,7 @@ const route: Routes =  [
     RouterModule.forRoot(route),
     FormsModule
   ],
-  providers: [],
+  providers: [ImtServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,16 +4,27 @@
         <div class="card">
             <img class="card-img-top" src="..." alt="Filler">
             <h2>Movements </h2>
-            <ul>
-              <li *ngFor="let mocks of mock">
-               Workouts:  {{ mocks }}
+            <ul *ngFor="let m of mockery" >
+              <li>
+                {{m.id}}
+              </li>
+              <li>
+                {{m.name}}
+              </li>
+              <li>
+                {{m.weight}}
+              </li>
+              <li>
+                {{m.notes}}
+              </li>
+              <li>
+                {{m.pB}}
               </li>
             </ul>
-                <button class="btn btn-outline-primary">Look at your past results</button>
-                <button class="btn btn-outline-secondary" (click)="getIMT()">Add your workouts</button>
-                <pre>{{this.IMTS | json }}</pre>
+                <button class="btn btn-outline-secondary" (click)="getIMT()">Your History</button>
+                <pre>{{ mockery | json }}</pre>
                 <app-imt-list-items (giveWorkout)="getFromChild($event)"></app-imt-list-items>
-                 The workout is: {{ IWorkOuts | json }}
+                 The workout is: {{ IWorkOuts | uppercase }}
         </div>
     </div>
   </div>
