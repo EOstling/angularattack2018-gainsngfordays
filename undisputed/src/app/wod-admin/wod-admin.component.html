@@ -1,52 +1,85 @@
-<div class="containter">
-  <form #wodAdminForm="ngForm">
-    <div class="form-group">
-      <label>Date:</label>
-      <input id="day" name="day"
-        placeholder="Date of Workout"
-        class="form-control"
-        [(ngModel)]="Wod.WOD.day"/>
-        (change)="loadWod()"
+<p>{{diagnostic}}</p>
+<div class="container">
+  <div class="row">
+    <div class="form-group col-sm-1">
+      <label for="day">Date:</label>
     </div>
-    <div class="form-group">
+    <div class='col-sm-5'>
+      <input id="day" name="day" placeholder="Date of Workout"
+      class="form-control" [ngModel]="Wod.WOD.day | date:'dd-MM-yyyy'"
+      (ngModelChange)="Wod.WOD.day.queryDate=$event" (change)="loadWod()"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-1">
       <label>Type:</label>
-      <select id="type" name="type" class="form-control" [(ngModel)]="Wod.WOD.type" (change)="loadWod()">
-        <option>-- Please Select a Type --</option>
+    </div>
+    <div class="col-sm-5">
+      <select id="type" name="type" class="form-control" [(ngModel)]="Wod.WOD.type.name" (change)="loadWod()">
+        <option value="" disabled>-- Please Select a Type --</option>
         <option *ngFor="let type of Types" value={{type.name}}>
           {{type.name}}
         </option>
       </select>
     </div>
-    <div class="col-xs-12">
-        <label class="col-xs-3">Workout Name:</label>
+  </div>
+  <div *ngFor="let entry of Wod.WODEntry">
+    <div class="row">
+      <div class="form-group col-sm-3">
+        <label>Workout Name:</label>
+      </div>
+      <div class="form-group col-sm-3">
         <label>Order:</label>
+      </div>
+      <div class="form-group col-sm-3">
         <label>Notes:</label>
+      </div>
     </div>
-    <form #wodAdminForm="ngForm">
-
-    </form>
-    <div class="form-group">
-
-      <input id="entryName" name="entryName" placeholder="Workout Name" class="form-control"
-      [(ngModel)]="Wod.WODEntry[0].name" (change)="loadWod()"/>
+    <div class="row">
+      <div class="form-group col-sm-3">
+        <input id="name" name="name" placeholder="Workout Name" class="form-control" [(ngModel)]="entry.name" />
+      </div>
+      <div class="form-group col-sm-3">
+        <input id="order" name="order" placeholder="Order A, B, C ..." class="form-control" [(ngModel)]="entry.order" />
+      </div>
+      <div class="form-group col-sm-3">
+        <input id="notes" name="notes" placeholder="Notes about this Workout" class="form-control" [(ngModel)]="entry.notes" />
+      </div>
+      <div *ngIf="entry.id == 0">
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-success" (click)="addEntry(entry)">Add</button>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Order:</label>
-      <input id="order" name="order" placeholder="Order A, B, C ..." class="form-control"
-      [(ngModel)]="Wod.WODEntry[0].Order" (change)="loadWod()"/>
+    <div *ngFor="let item of entry.items">
+      <div class="row" *ngIf="entry.id !=0">
+        <div class="form-group col-sm-2">
+          <label>Item Name:</label>
+        </div>
+        <div class="form-group col-sm-4">
+          <input id="notes" name="notes" placeholder="Item Name" class="form-control" [(ngModel)]="item.notes" />
+        </div>
+        <div *ngIf="item.id == 0">
+          <div class="col-sm-1">
+            <button type="button" class="btn btn-success" (click)="addItem(entry.id, item)">Add</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <label>Notes:</label>
-      <input id="Notes" name="Notes" placeholder="Notes about this Workout" class="form-control"
-      [(ngModel)]="Wod.WODEntry[0].Notes" (change)="loadWod()"/>
-    </div>
-    <div class="form-group">
-      <label>Item Name:</label>
-      <input id="itemName" name="itemName" placeholder="Item Name" class="form-control"
-      [(ngModel)]="Wod.WODEntry[0].items[0].Notes"(change)="loadWod()"/>
-    </div>
+  </div>
+</div>
+<!-- <div class="row">
+      <div class="form-group col-sm-10">
+        <label>Item Name:</label>
+        <input id="itemName" name="itemName" placeholder="Item Name" class="form-control" [(ngModel)]="Wod.WODEntry[0].items[0].Notes"
+          (change)="loadWod()" />
+      </div>
+    </div> -->
+<div class="row">
+  <div class="col-sm-10">
     <button type="submit" class="btn btn-success">Submit</button>
-  </form>
+  </div>
 </div>
 
 <app-wod [WorkingWod]="outWod" [showWods]=false></app-wod>
