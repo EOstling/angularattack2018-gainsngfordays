@@ -41,6 +41,6 @@ export class ImtServiceService implements OnInit {
 
   getImts(mocks): Imt[]  {
     this.mock.next(mocks);
-    return MockImt;
+    return mocks;
   }
 }

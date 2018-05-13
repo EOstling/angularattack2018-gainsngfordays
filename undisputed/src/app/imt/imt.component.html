@@ -22,9 +22,8 @@
               </li>
             </ul>
                 <button class="btn btn-outline-secondary" (click)="getIMT()">Your History</button>
-                <pre>{{ mockery | json }}</pre>
                 <app-imt-list-items (giveWorkout)="getFromChild($event)"></app-imt-list-items>
-                 The workout is: {{ IWorkOuts | uppercase }}
+                 The workout added: {{ IWorkOuts | uppercase }}
         </div>
     </div>
   </div>

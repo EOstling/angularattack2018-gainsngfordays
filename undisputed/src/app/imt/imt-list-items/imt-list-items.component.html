@@ -4,16 +4,9 @@
          required maxlength="25"
          [(ngModel)]="name" name="name"
          #pickedName="ngModel">
-  <div *ngIf="!pickedName.valid && pickedName.touched">
-    Name this something
-  </div>
-
   <input type="text" placeholder="Add a note here"
          required [(ngModel)]="nNotes"
          name="nNotes" #Note="ngModel">
-  <div *ngIf="!userEmail.valid">
-    Add a note brosef!
-  </div>
   <input type="text" placeholder="Whats your name"
          [(ngModel)]="name" name="name">
          <button class ="btn btn-outline-secondary" (click)="NotifyParent()">Add Movement</button>
