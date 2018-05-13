@@ -6,7 +6,7 @@
             <h2>Your previous individual movements workout was </h2>
                 <button class="btn btn-outline-primary">Look at your past results</button>
                 <button class="btn btn-outline-secondary" (click)="getIMT()">Add your workouts</button>
-                <app-imt-list-items></app-imt-list-items>
+                <app-imt-list-items (giveWorkout)="getFromChild($event)"></app-imt-list-items>
                  The workout is: {{ IWorkOuts }}
         </div>
     </div>
