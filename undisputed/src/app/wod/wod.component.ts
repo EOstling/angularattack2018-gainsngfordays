@@ -19,12 +19,12 @@ export class WODComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    this.showWods = this.route.params.value.showWods;
+    // this.showWods = this.route.params.value.showWods;
     this.getWODs();
   }
 
   getWODs(): void {
-    if (this.showWods == "true") {
+    if (this.showWods === 'true') {
       this.WODS = this.wodService.getWods();
     }
   }

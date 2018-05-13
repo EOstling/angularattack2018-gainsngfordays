@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ImtServiceService } from './Shared/imt-service.service';
 
 const route: Routes =  [
+  {path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'movement', component: IMTComponent },
   { path: 'wod/:showWods', component: WODComponent },
   {path: 'item', component: ImtListItemsComponent},
