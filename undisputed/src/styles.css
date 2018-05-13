@@ -1,11 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 h2 {
-  color: #c00;
+  color: #BF0A30;
   font-weight: bold;
 }
-.navbar{
+.navbar, .page-footer{
   background-color: #BF0A30;
 }
 .nav-text {
   color: #FFD700
+}
+btn-danger{
+  background-color: #BF0A30;
+}
+.nav-item, .footer-item {
+  margin:15px;
+  padding: -5%;
+}
+.footer-spacing{
+  padding-top: 2%;
 }

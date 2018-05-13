@@ -12,19 +12,19 @@ import { Location } from '@angular/common';
 export class WODComponent implements OnInit {
   WODS: WODModel[];
   @Input() WorkingWod: WODModel;
-  @Input() showWods: boolean;
+  @Input() showWods: string;
 
   constructor(private wodService: WODService,
     private route: ActivatedRoute,
     private location: Location) { }
 
   ngOnInit() {
+    this.showWods = this.route.params.value.showWods;
     this.getWODs();
-    this.showWods = (<any>this.route.snapshot.paramMap.get('shoeWods'));
   }
 
   getWODs(): void {
-    if (this.showWods) {
+    if (this.showWods == "true") {
       this.WODS = this.wodService.getWods();
     }
   }

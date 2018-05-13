@@ -16,9 +16,10 @@ import { ImtServiceService } from './Shared/imt-service.service';
 
 const route: Routes =  [
   { path: 'movement', component: IMTComponent },
-  { path: 'wod', component: WODComponent },
+  { path: 'wod/:showWods', component: WODComponent },
   {path: 'item', component: ImtListItemsComponent},
-  {path: 'welcome', component: WelcomeComponent}
+  {path: 'welcome', component: WelcomeComponent},
+  {path: 'wodAdmin', component: WodAdminComponent}
 ];
 
 @NgModule({
