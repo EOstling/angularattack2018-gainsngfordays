@@ -20,7 +20,7 @@ export class ImtListItemsComponent implements OnInit {
   // THIS IS THE CHILD COMPONENT
   // event sending info
   NotifyParent(): void {
-    this.giveWorkout.emit(this.temp);
+    this.giveWorkout.emit('Bench');
   }
 
 }

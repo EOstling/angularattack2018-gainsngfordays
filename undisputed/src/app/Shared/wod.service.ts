@@ -8,7 +8,7 @@ import { WODModel } from '../WODModel';
 export class WODService {
 
   constructor() { }
-  getHeroes(): WODModel[] {
+  getWods(): WODModel[] {
     return MockWods;
   }
 }

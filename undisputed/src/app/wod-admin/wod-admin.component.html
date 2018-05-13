@@ -1,50 +1,52 @@
 <div class="containter">
   <form #wodAdminForm="ngForm">
-      <div class="form-group">
-          <label>Date:</label>
-          <input id="id" name="id"
-            placeholder=""
-            class="form-control"
-            [(ngModel)]="Wod.id"/>
-        </div>
     <div class="form-group">
       <label>Date:</label>
       <input id="day" name="day"
         placeholder="Date of Workout"
         class="form-control"
         [(ngModel)]="Wod.WOD.day"/>
+        (change)="loadWod()"
     </div>
     <div class="form-group">
       <label>Type:</label>
-      <select id="type" name="type" class="form-control" [(ngModel)]="Wod.WOD.type">
+      <select id="type" name="type" class="form-control" [(ngModel)]="Wod.WOD.type" (change)="loadWod()">
         <option>-- Please Select a Type --</option>
         <option *ngFor="let type of Types" value={{type.name}}>
           {{type.name}}
         </option>
       </select>
     </div>
+    <div class="col-xs-12">
+        <label class="col-xs-3">Workout Name:</label>
+        <label>Order:</label>
+        <label>Notes:</label>
+    </div>
+    <form #wodAdminForm="ngForm">
+
+    </form>
     <div class="form-group">
-      <label>Workout Name:</label>
+
       <input id="entryName" name="entryName" placeholder="Workout Name" class="form-control"
-      [(ngModel)]="Wod.WODEntry[0].name"/>
+      [(ngModel)]="Wod.WODEntry[0].name" (change)="loadWod()"/>
     </div>
     <div class="form-group">
       <label>Order:</label>
       <input id="order" name="order" placeholder="Order A, B, C ..." class="form-control"
-      [(ngModel)]="Wod.WODEntry[0].Order"/>
+      [(ngModel)]="Wod.WODEntry[0].Order" (change)="loadWod()"/>
     </div>
     <div class="form-group">
       <label>Notes:</label>
       <input id="Notes" name="Notes" placeholder="Notes about this Workout" class="form-control"
-      [(ngModel)]="Wod.WODEntry[0].Notes"/>
+      [(ngModel)]="Wod.WODEntry[0].Notes" (change)="loadWod()"/>
     </div>
     <div class="form-group">
       <label>Item Name:</label>
       <input id="itemName" name="itemName" placeholder="Item Name" class="form-control"
-      [(ngModel)]="Wod.WODEntry[0].items[0].Notes"/>
+      [(ngModel)]="Wod.WODEntry[0].items[0].Notes"(change)="loadWod()"/>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>
-{{diagnostic}}
-<app-wod [WorkingWod]="Wod"></app-wod>
+
+<app-wod [WorkingWod]="outWod" [showWods]=false></app-wod>

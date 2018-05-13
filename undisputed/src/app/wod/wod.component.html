@@ -1,12 +1,13 @@
+<p>{{diagnostic}}</p>
 <div class="col-xs-12" *ngIf="WorkingWod">
-  <div *ngFor="let wods of WorkingWod" class="col-xs-5 text-center">
+  <div class="col-xs-5 text-center">
     <div class="text-uppercase font-weight-bold">
       <u>
-        {{wods.WOD.type.name}} for {{wods.WOD.day | date:'MM/dd/yyyy'}}
+        {{WorkingWod.WOD.type.name}} for {{WorkingWod.WOD.day | date:'MM/dd/yyyy'}}
         <br />
       </u>
     </div>
-    <div *ngFor="let wodEntry of wods.WODEntry">
+    <div *ngFor="let wodEntry of WorkingWod.WODEntry">
       <div class="font-weight-bold">
         {{wodEntry.name}}
         <br />
@@ -24,7 +25,7 @@
     </div>
   </div>
 </div>
-<div class="col-xs-12" *ngIf="WODS">
+<div class="col-xs-12" *ngIf="showWods">
     <div *ngFor="let wods of WODS" class="col-xs-5 text-center">
       <div class="text-uppercase font-weight-bold">
         <u>

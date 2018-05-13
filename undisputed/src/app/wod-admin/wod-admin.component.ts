@@ -11,7 +11,7 @@ import { WOD } from '../wod';
 export class WodAdminComponent implements OnInit {
   Wod: WODModel;
   Types: WODType[];
-
+  outWod: WODModel;
   constructor() {}
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class WodAdminComponent implements OnInit {
       id: 1,
       WOD: {
         id: 1,
-        day: new Date('0/01/2018'),
+        day: new Date('01/01/2018'),
         type: { id: 1, name: '' }
       },
       WODEntry: [
@@ -33,14 +33,16 @@ export class WodAdminComponent implements OnInit {
       ]
     };
     this.loadTypes();
-    console.log(this.Types);
   }
 
   loadTypes(): void {
     this.Types = [{ id: 1, name: 'WOD' }, { id: 2, name: 'uFit' }];
   }
+  loadWod(): void {
+    this.outWod = this.Wod;
+  }
   // TODO: Remove this when we're done
   get diagnostic() {
-    return JSON.stringify(this.Wod);
+    return JSON.stringify(this.outWod);
   }
 }
