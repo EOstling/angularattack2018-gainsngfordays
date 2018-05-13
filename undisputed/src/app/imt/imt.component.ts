@@ -25,6 +25,8 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
     canvas: any;
     ctx: any;
 
+    mock =  MockImt;
+
     @Input() IWorkOuts: string; // proof of concept first for passing data from Child to parent
 
   // mount the data vis for the graph in lifecyle hook
@@ -61,6 +63,7 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
    }
 
   ngOnInit() {
+
     this.getIMT();
   }
 

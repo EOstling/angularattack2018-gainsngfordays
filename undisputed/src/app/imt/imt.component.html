@@ -5,16 +5,9 @@
             <img class="card-img-top" src="..." alt="Filler">
             <h2>Movements </h2>
             <ul>
-              <li>Farmers handle Single hand Double</li>
-              <li>1 Mile Run</li>
-              <li>2 Defecit Deadlift</li>
-              <li> 2K Row</li>
-              <li>300yd Shuttle</li>
-              <li>25 Burpees </li>
-              <li>1.5 Mile Swim</li>
-              <li>400m Swim</li>
-              <li>25 Pull ups</li>
-              <li>55 Push Ups</li>
+              <li *ngFor="let mocks of mock">
+               Workouts:  {{ mocks }}
+              </li>
             </ul>
                 <button class="btn btn-outline-primary">Look at your past results</button>
                 <button class="btn btn-outline-secondary" (click)="getIMT()">Add your workouts</button>
