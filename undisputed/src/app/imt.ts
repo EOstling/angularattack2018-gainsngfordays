@@ -2,6 +2,7 @@
 export class Imt {
 
   id: number;
+  name: string;
   weight: number;
   time: Date;
   day: Date;
