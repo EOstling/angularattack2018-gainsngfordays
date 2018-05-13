@@ -1,12 +1,21 @@
+<form #itemsForm="ngForm">
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <form action="">
-
-      </form>
-    </div>
+  <input type="text" placeholder="Name of Workout"
+         required maxlength="25"
+         [(ngModel)]="name" name="name"
+         #pickedName="ngModel">
+  <div *ngIf="!pickedName.valid && pickedName.touched">
+    Name this something
   </div>
-</div>
 
-<button class ="btn btn-outline-secondary" (click)="NotifyParent()">Add Movement</button>
+  <input type="text" placeholder="Add a note here"
+         required [(ngModel)]="nNotes"
+         name="nNotes" #Note="ngModel">
+  <div *ngIf="!userEmail.valid">
+    Add a note brosef!
+  </div>
+  <input type="text" placeholder="Whats your name"
+         [(ngModel)]="name" name="name">
+         <button class ="btn btn-outline-secondary" (click)="NotifyParent()">Add Movement</button>
+</form>
+

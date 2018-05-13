@@ -12,6 +12,10 @@ import {Imt} from '../../imt';
 })
 export class ImtListItemsComponent implements OnInit {
 
+  newWorkOut: string;
+  nNotes: string;
+  name: string;
+
   constructor() {
   }
 
@@ -24,6 +28,8 @@ export class ImtListItemsComponent implements OnInit {
   }
 
   NotifyParent(): void {
-    this.giveWorkout.emit('Workouts');
+    this.giveWorkout.emit( this.newWorkOut);
+    this.giveWorkout.emit(this.nNotes);
+    this.giveWorkout.emit(this.name);
   }
 }

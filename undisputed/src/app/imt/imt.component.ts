@@ -17,7 +17,7 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
     weight: 230;
     time: Date;
     day: Date;
-    typeOfWorkout: [{'id': 1 , 'type': 'Strength' }];
+    typeOfWorkout: [{'id': 1 , 'type': 'Undefined' }];
     notes: 'Test';
     pB: 'Best';
 
@@ -26,7 +26,7 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
     chart =  [];
     canvas: any;
     ctx: any;
-    @Input() IWorkOuts: string; // proof of concept first for passing data from Child to parent
+    @Input() IWorkOuts: Array<string> = []; // proof of concept first for passing data from Child to parent
 
   // mount the data vis for the graph in lifecyle hook
   ngAfterViewInit() {
