@@ -10,14 +10,14 @@ import { ImtListItemsComponent } from './imt/imt-list-items/imt-list-items.compo
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-
-
-
+import { WelcomeComponent } from './welcome/welcome.component';
+import { FooterComponent } from './footer/footer.component';
 
 const route: Routes =  [
   { path: 'movement', component: IMTComponent },
   { path: 'wod', component: WODComponent },
-  {path: 'item', component: ImtListItemsComponent}
+  {path: 'item', component: ImtListItemsComponent},
+  {path: 'welcome', component: WelcomeComponent}
 ];
 
 @NgModule({
@@ -29,7 +29,9 @@ const route: Routes =  [
     WodAdminComponent,
     ImtListItemsComponent,
     SignupComponent,
-    LoginComponent],
+    LoginComponent,
+    WelcomeComponent,
+    FooterComponent],
 
   imports: [
     BrowserModule,
