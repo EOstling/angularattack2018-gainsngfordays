@@ -17,7 +17,7 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
     weight: 230;
     time: Date;
     day: Date;
-    workout: 'Navy Seal Workout';
+    typeOfWorkout: [{'id': 1 , 'type': 'Strength' }];
     notes: 'Test';
     pB: 'Best';
 
@@ -56,7 +56,6 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
   constructor(private ImtServiceService: ImtServiceService) {
     this.id = 1;
     this.weight = 230;
-    this.workout = 'Navy Seal Workout';
     this.notes = 'Test';
     this.pB =  'Best';
    }
