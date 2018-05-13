@@ -10,6 +10,7 @@ import { ImtListItemsComponent } from './imt/imt-list-items/imt-list-items.compo
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { ImtServiceService } from './Shared/imt-service.service';
 
 
 
@@ -36,7 +37,7 @@ const route: Routes =  [
     RouterModule.forRoot(route),
     FormsModule
   ],
-  providers: [],
+  providers: [ImtServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,9 +4,15 @@
         <div class="card">
             <img class="card-img-top" src="..." alt="Filler">
             <h2>Movements </h2>
-            <ul>
-              <li *ngFor="let mocks of mock">
-               Workouts:  {{ mocks }}
+            <ul *ngFor="let m of mock" >
+              <li>
+                m.name
+              </li>
+              <li>
+                m.workout
+              </li>
+              <li>
+                m.notes
               </li>
             </ul>
                 <button class="btn btn-outline-primary">Look at your past results</button>

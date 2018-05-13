@@ -21,12 +21,11 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
     notes: 'Test';
     pB: 'Best';
 
+    mock = Array<any>();
+    count: number; // counter for service
     chart =  [];
     canvas: any;
     ctx: any;
-
-    mock =  MockImt;
-
     @Input() IWorkOuts: string; // proof of concept first for passing data from Child to parent
 
   // mount the data vis for the graph in lifecyle hook
@@ -63,14 +62,14 @@ export class IMTComponent implements OnInit, AfterViewInit , Imt {
    }
 
   ngOnInit() {
-
+    this.count = this.mock.length;
+    this.ImtServiceService.mocks.subscribe(res => this.mock = res);
     this.getIMT();
   }
 
   getIMT(): void {
     const given = [];
-    this.IMTS = this.ImtServiceService.getImts();
-    console.log(this.IMTS);
+    this.IMTS = this.ImtServiceService.getImts(this.mock);
     // iterate throught the array
    for (let i = 0; i < this.IMTS.length; i++) {
     console.log('Each Array is at:' + i + this.IMTS);
