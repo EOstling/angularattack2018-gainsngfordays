@@ -20,7 +20,6 @@ export class WODComponent implements OnInit {
 
   ngOnInit() {
     // this.showWods = this.route.params.value.showWods;
-
     this.showWods = this.route.snapshot.paramMap.get('showWods');
     this.getWODs();
   }

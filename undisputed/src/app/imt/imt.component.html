@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-        <div class="card">
             <img class="card-img-top" src="../../assets/weffs.jpg" alt="Filler">
             <h2>Movements </h2>
             <ul *ngFor="let m of mockery" >
@@ -24,7 +23,6 @@
                 <button class="btn btn-outline-secondary" (click)="getIMT()">Your History</button>
                 <app-imt-list-items (giveWorkout)="getFromChild($event)"></app-imt-list-items>
                  The workout added: {{ IWorkOuts | uppercase }}
-        </div>
     </div>
   </div>
 </div>
