@@ -8,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { WodAdminComponent } from './wod-admin/wod-admin.component';
 import { ImtListItemsComponent } from './imt/imt-list-items/imt-list-items.component';
 import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -25,7 +27,9 @@ const route: Routes =  [
     NavComponent,
     IMTComponent,
     WodAdminComponent,
-    ImtListItemsComponent],
+    ImtListItemsComponent,
+    SignupComponent,
+    LoginComponent],
 
   imports: [
     BrowserModule,
